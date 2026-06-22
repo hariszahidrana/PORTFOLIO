@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad Haris — Frontend Developer & CS Graduate</title>
+  <meta name="description" content="Portfolio of Muhammad Haris — frontend developer specializing in React, JavaScript, and modern web experiences. Based in Lahore, Pakistan.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#09090b',
+            fg: '#fafafa',
+            accent: '#facc15',
+            muted: '#a1a1aa',
+          },
+          fontFamily: {
+            display: ['Space Grotesk', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-trail"></div>
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-transform duration-500" style="transform: translateY(0);">
+    <div class="mx-auto max-w-7xl px-6 lg:px-10 py-5 flex items-center justify-between">
+      <a href="#home" class="font-display text-2xl font-bold tracking-tight">
+        M<span style="color: var(--accent);">.Haris</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 text-sm" style="color: #d4d4d8;">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="assets/CV/Muhammad Haris CV.pdf" download class="text-sm px-4 py-2.5 rounded-full border hover:border-[color:var(--accent)] hover:text-[color:var(--accent)] transition-colors" style="border-color: rgba(255,255,255,0.2);">
+          Download CV
+        </a>
+        <a href="#contact" class="btn-accent px-5 py-2.5 rounded-full text-sm">Let's talk</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-2xl" aria-label="Open menu" style="color: var(--fg);">≡</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="mobile-menu hidden" style="background: rgba(9, 9, 11, 0.95);">
+    <button id="menu-close" class="absolute top-6 right-6 text-3xl" style="color: var(--fg);">×</button>
+    <a href="#home" class="font-display text-4xl font-bold" style="color: var(--fg);">Home</a>
+    <a href="#about" class="font-display text-4xl font-bold" style="color: var(--fg);">About</a>
+    <a href="#projects" class="font-display text-4xl font-bold" style="color: var(--fg);">Projects</a>
+    <a href="#services" class="font-display text-4xl font-bold" style="color: var(--fg);">Services</a>
+    <a href="#contact" class="font-display text-4xl font-bold" style="color: var(--fg);">Contact</a>
+    <a href="./Muhammad_Haris_CV.pdf" download class="btn-accent px-6 py-3 rounded-full text-sm mt-4">Download CV</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="relative min-h-screen w-full overflow-hidden flex items-center pt-28 pb-12" style="background: var(--bg); color: var(--fg);">
+    <div class="absolute inset-0 flex items-center justify-center overflow-hidden">
+      <span class="bg-portfolio">PORTFOLIO</span>
+    </div>
+    <div class="absolute inset-0 pointer-events-none"
+         style="background: radial-gradient(ellipse at 20% 30%, rgba(250,204,21,0.08), transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(168,85,247,0.06), transparent 50%);"></div>
+
+    <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-10 w-full grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="rise text-sm uppercase tracking-[0.3em] mb-6" style="color: var(--accent); animation-delay: 0.1s;">
+          👋 Hello
+        </p>
+        <h1 class="rise font-display font-bold leading-[0.95] text-5xl md:text-7xl" style="animation-delay: 0.25s;">
+          My name is <br>
+          <span style="color: var(--accent);">Muhammad Haris</span>
+        </h1>
+        <p class="rise mt-8 text-lg max-w-xl leading-relaxed" style="color: #a1a1aa; animation-delay: 0.45s;">
+            Hi, I'm Muhammad Haris.
+            A CS graduate from UMT Lahore building modern web apps from the database to the screen.I stack clean frontends using React and Tailwind CSS with robust backends powered by Node.js and databases.
+        </p>
+        <div class="rise mt-10 flex flex-wrap gap-4" style="animation-delay: 0.65s;">
+          <a href="./Muhammad_Haris_CV.pdf" download class="btn-accent px-7 py-3.5 rounded-full text-sm inline-flex items-center gap-2">
+            <span>↓</span> Download CV
+          </a>
+          <a href="#projects" class="px-7 py-3.5 rounded-full text-sm border hover:border-white/60 transition-colors" style="border-color: rgba(255,255,255,0.2); color: var(--fg);">
+            View Projects
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: hanging ID card -->
+      <div class="relative flex justify-center lg:justify-end" style="height: 560px;">
+        <div class="lanyard-anchor absolute top-0 flex flex-col items-center" style="transform-origin: top center;">
+          <div class="lanyard-strap" style="height: 208px; border-radius: 0 0 2px 2px;">
+            <div class="lanyard-text">***MH***</div>
+          </div>
+          <div class="lanyard-clip" style="margin-top: -4px;"></div>
+          <div class="id-card">
+            <div class="flex items-center justify-between text-[10px] uppercase tracking-widest mb-3" style="color: #71717a;">
+              <span></span>
+              <span style="color: var(--accent);">● Available</span>
+            </div>
+            <div class="aspect-[4/5] rounded-xl overflow-hidden mb-4" style="background: #18181b;">
+              <img src="assets/images/Haris.png" alt="Muhammad Haris" width="512" height="640" class="w-full h-full object-cover">
+            </div>
+            <div class="font-display font-bold text-lg leading-tight">Muhammad Haris</div>
+            <div class="text-xs mt-1" style="color: #a1a1aa;">Frontend Developer</div>
+            <div class="mt-4 flex gap-2">
+              <span class="flex-1 h-1.5 rounded-full" style="background: var(--accent);"></span>
+              <span class="flex-1 h-1.5 rounded-full" style="background: #6366f1;"></span>
+              <span class="flex-1 h-1.5 rounded-full" style="background: #3f3f46;"></span>
+            </div>
+            <div class="mt-3 grid grid-cols-3 text-[9px] uppercase tracking-wider" style="color: #71717a;">
+              <span>React</span><span class="text-center">Node</span><span class="text-right">CMS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs uppercase tracking-[0.3em] animate-pulse" style="color: #71717a;">
+      Scroll ↓
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="relative py-32 px-6 lg:px-10 mx-auto" style="background: var(--bg); color: var(--fg); max-width: 80rem;">
+    <p class="reveal text-sm uppercase tracking-[0.3em] mb-6" style="color: var(--accent);">About</p>
+    <h2 class="reveal font-display text-5xl md:text-7xl font-bold leading-[0.95]" style="max-width: 64rem;">
+      Building responsive, interactive interfaces with <span style="color: var(--accent);">React</span> &amp; modern web tech.
+    </h2>
+    <div class="grid md:grid-cols-3 gap-10 mt-20">
+      <p class="reveal text-lg leading-relaxed md:col-span-2" style="color: #a1a1aa;">
+        Hi, I'm Haris. I break down complex problems into clean, working code.
+        Fresh out of UMT Lahore, I’m a developer shaping my skills across the entire web ecosystem. I stack my frontend layout skills (HTML, CSS, Tailwind) with interactive logic (JavaScript & React) and power it all behind the scenes with Node.js, Express, and databases. I build Web-apps that look sharp and run smart.
+      </p>
+      <div class="reveal space-y-4">
+        <div class="border-l-2 pl-4" style="border-color: var(--accent);">
+          <div class="font-display text-4xl font-bold">0.3+</div>
+          <div class="text-sm" style="color: #71717a;">Years experience</div>
+        </div>
+        <div class="border-l-2 pl-4" style="border-color: var(--accent);">
+          <div class="font-display text-4xl font-bold">2+</div>
+          <div class="text-sm" style="color: #71717a;">Projects shipped</div>
+        </div>
+        <div class="border-l-2 pl-4" style="border-color: var(--accent);">
+          <div class="font-display text-4xl font-bold">98%</div>
+          <div class="text-sm" style="color: #71717a;">Model accuracy</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-24 overflow-hidden">
+      <div class="marquee marquee-l font-display text-6xl md:text-8xl font-bold whitespace-nowrap">
+        <span class="flex gap-12 pr-12">
+          <span>HTML</span><span class="outline-text">CSS</span><span>JS.</span>
+          <span class="outline-text">Node.js</span><span>MongoDB</span><span class="outline-text">REACT</span>
+        </span>
+        <span class="flex gap-12 pr-12">
+          <span>PYTHON</span><span class="outline-text">JavaScript</span><span>Tailwind</span>
+          <span class="outline-text">Node.js</span><span>MongoDB</span><span class="outline-text">Python</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="relative py-32 px-6 lg:px-10 mx-auto" style="background: var(--bg); color: var(--fg); max-width: 80rem;">
+    <div class="flex items-end justify-between mb-16">
+      <div>
+        <p class="reveal text-sm uppercase tracking-[0.3em] mb-4" style="color: var(--accent);">Selected Work</p>
+        <h2 class="reveal font-display text-5xl md:text-7xl font-bold">Projects.</h2>
+      </div>
+      <p class="reveal hidden md:block max-w-sm" style="color: #71717a;">A few recent builds — from AI-powered platforms to ML experiments.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <a href="https://gharbaar-estate-app.vercel.app/" target="_blank" rel="noreferrer"
+         class="reveal glass rounded-3xl p-8 group transition-all hover:-translate-y-1" style="transition-delay: 0ms;">
+        <div class="aspect-[16/10] rounded-2xl mb-6 overflow-hidden relative"
+             style="background: linear-gradient(135deg, #1e3a8a, #0a0a0c);">
+          <div class="absolute inset-0 flex items-center justify-center font-display text-7xl font-bold" style="color: rgba(255,255,255,0.15);"><img src="assets/images/Ghar_Baar.png" alt="GharBaar"></div>
+          <div class="absolute bottom-4 left-4 text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.8);">AI Real Estate</div>
+          <div class="absolute top-4 right-4 text-xs group-hover:transition-colors" style="color: rgba(255,255,255,0.7);">↗ Visit</div>
+        </div>
+        <h3 class="font-display text-2xl font-semibold mb-2 group-hover:transition-colors" style="color: var(--fg);">GharBaar Estate</h3>
+        <p class="text-sm leading-relaxed" style="color: #a1a1aa;">AI-powered real estate platform with a renovation marketplace, JWT auth, admin dashboard, and ResNet50 model achieving 98.22% accuracy on renovation predictions.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">React</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">Node.js</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">MongoDB</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">TensorFlow</span>
+        </div>
+      </a>
+
+      <a href="https://hariszahidrana.github.io/Netflix-Clone/" target="_blank" rel="noreferrer"
+         class="reveal glass rounded-3xl p-8 group transition-all hover:-translate-y-1" style="transition-delay: 60ms;">
+        <div class="aspect-[16/10] rounded-2xl mb-6 overflow-hidden relative"
+             style="background: linear-gradient(135deg, #7f1d1d, #0a0a0c);">
+          <div class="absolute inset-0 flex items-center justify-center font-display text-7xl font-bold" style="color: rgba(255,255,255,0.15);"><img src="assets/images/Netflix.png" alt="Netflix"></div>
+          <div class="absolute bottom-4 left-4 text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.8);">Web App</div>
+          <div class="absolute top-4 right-4 text-xs" style="color: rgba(255,255,255,0.7);">↗ Visit</div>
+        </div>
+        <h3 class="font-display text-2xl font-semibold mb-2" style="color: var(--fg);">Netflix Clone</h3>
+        <p class="text-sm leading-relaxed" style="color: #a1a1aa;">Responsive Netflix-inspired streaming UI with dynamic content from movie and optimized layouts for desktop and mobile.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">HTML</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">CSS</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">JavaScript</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/hariszahidrana/Brain-Tumor-Prediction" target="_blank" rel="noreferrer"
+         class="reveal glass rounded-3xl p-8 group transition-all hover:-translate-y-1" style="transition-delay: 120ms;">
+        <div class="aspect-[16/10] rounded-2xl mb-6 overflow-hidden relative"
+             style="background: linear-gradient(135deg, #581c87, #0a0a0c);">
+          <div class="absolute inset-0 flex items-center justify-center font-display text-7xl font-bold" style="color: rgba(255,255,255,0.15);"><img src="assets/images/Brain.jpg" alt="Brain"></div>
+          <div class="absolute bottom-4 left-4 text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.8);">Machine Learning</div>
+          <div class="absolute top-4 right-4 text-xs" style="color: rgba(255,255,255,0.7);">↗ Visit</div>
+        </div>
+        <h3 class="font-display text-2xl font-semibold mb-2" style="color: var(--fg);">Brain Tumor Detection</h3>
+        <p class="text-sm leading-relaxed" style="color: #a1a1aa;">MRI-based brain tumor detection with 93% accuracy using Logistic Regression, CNN (TensorFlow/Keras), and HOG feature extraction with full evaluation suite.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">Python</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">TensorFlow</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">scikit-learn</span>
+        </div>
+      </a>
+
+      <a href="https://hariszahidrana.github.io/Spotify_Clone_Custom-Twists/" target="_blank" rel="noreferrer"
+         class="reveal glass rounded-3xl p-8 group transition-all hover:-translate-y-1" style="transition-delay: 180ms;">
+        <div class="aspect-[16/10] rounded-2xl mb-6 overflow-hidden relative"
+             style="background: linear-gradient(135deg, #065f46, #0a0a0c);">
+          <div class="absolute inset-0 flex items-center justify-center font-display text-7xl font-bold" style="color: rgba(255,255,255,0.15);"><img src="assets/images/Spotify.png" alt="Spotify_Clone_Custom-Twists"></div>
+          <div class="absolute bottom-4 left-4 text-xs uppercase tracking-widest" style="color: rgba(255,255,255,0.8);">Spotify Clone With Custom Twists</div>
+          <div class="absolute top-4 right-4 text-xs" style="color: rgba(255,255,255,0.7);">↗ Visit</div>
+        </div>
+        <h3 class="font-display text-2xl font-semibold mb-2" style="color: var(--fg);">Spotify Clone</h3>
+        <p class="text-sm leading-relaxed" style="color: #a1a1aa;">A pixel-perfect Spotify clone built with responsive layouts and structural clean code. Showcases state management, fluid audio engine integration, component reusability, and seamless user experiences.</p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">HTML5</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">CSS3</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">JavaScript</span>
+          <span class="text-xs px-3 py-1 rounded-full border" style="border-color: rgba(255,255,255,0.1); color: #d4d4d8;">React</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="services" class="relative py-32 overflow-hidden" style="background: var(--bg); color: var(--fg);">
+    <h2 class="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 text-center font-display font-bold select-none outline-text" style="font-size: 18vw; line-height: 1;">SERVICES</h2>
+    <div class="relative mx-auto px-6 lg:px-10 text-center" style="max-width: 80rem;">
+      <p class="reveal text-sm uppercase tracking-[0.3em] mb-4" style="color: var(--accent);">What I Do</p>
+      <h3 class="reveal font-display text-4xl md:text-6xl font-bold mb-20 mx-auto" style="max-width: 48rem;">From idea to interface — crafted with care.</h3>
+
+      <!-- Desktop circular layout -->
+      <div class="reveal hidden lg:block relative mx-auto" style="width: 820px; height: 720px;">
+        <!-- Center Face — smaller -->
+        <div id="face-desktop" class="face-container lg-only absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+             style="width: 220px; height: 220px;
+                    background: radial-gradient(circle at 30% 25%, #facc15 0%, #f59e0b 35%, #b45309 100%);
+                    box-shadow: 0 0 80px rgba(250,204,21,0.2), inset -16px -24px 48px rgba(0,0,0,0.25), inset 8px 8px 24px rgba(255,255,255,0.15);">
+          <div class="flex" style="gap: 22px;">
+            <div class="eye bg-white rounded-full flex items-center justify-center shadow-inner" style="width: 48px; height: 48px;">
+              <div class="pupil bg-zinc-900 rounded-full relative" style="width: 20px; height: 20px; transition: transform 0.08s linear;">
+                <div class="absolute bg-white rounded-full" style="width: 6px; height: 6px; top: 20%; left: 20%;"></div>
+              </div>
+            </div>
+            <div class="eye bg-white rounded-full flex items-center justify-center shadow-inner" style="width: 48px; height: 48px;">
+              <div class="pupil bg-zinc-900 rounded-full relative" style="width: 20px; height: 20px; transition: transform 0.08s linear;">
+                <div class="absolute bg-white rounded-full" style="width: 6px; height: 6px; top: 20%; left: 20%;"></div>
+              </div>
+            </div>
+          </div>
+          <svg width="88" height="44" viewBox="0 0 80 36" class="mt-3 overflow-visible">
+            <path class="mouth-path"
+                  d="M 22 18 Q 40 22 58 18"
+                  stroke="#1a1a1a"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  fill="none"
+                  style="transition: all 0.4s cubic-bezier(.5,1.6,.4,1);" />
+          </svg>
+        </div>
+
+        <!-- Service Card 1: Frontend Development — TOP -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% + 0px); top: calc(50% - 248px); transform: translate(-50%, -50%); animation-delay: 0s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #1e40af;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #1e40af, #3b5bdb);">⚛</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">Frontend Dev</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">React.js interfaces with clean state management and pixel-precise design.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 2: Responsive Web Design — TOP RIGHT -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% + 248px); top: calc(50% - 124px); transform: translate(-50%, -50%); animation-delay: 0.5s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #b45309;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #b45309, #d97706);">✦</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">Responsive Design</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Mobile-first layouts using Tailwind and modern CSS across every device.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 3: CMS Integration — BOTTOM RIGHT -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% + 248px); top: calc(50% + 124px); transform: translate(-50%, -50%); animation-delay: 1s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #7c2d12;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">▣</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">CMS Integration</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">WordPress and headless CMS workflows marketing teams actually enjoy.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 4: REST API Integration — BOTTOM -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% + 0px); top: calc(50% + 248px); transform: translate(-50%, -50%); animation-delay: 1.5s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #065f46;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #065f46, #059669);">↔</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">REST API Integration</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Connecting frontends to Node/Express backends with JWT auth flows.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 5: ML Prototyping — BOTTOM LEFT -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% - 248px); top: calc(50% + 124px); transform: translate(-50%, -50%); animation-delay: 2s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #581c87;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #581c87, #7c3aed);">◉</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">ML Prototyping</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Python, TensorFlow, scikit-learn from data prep to model evaluation.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Card 6: Deployment & DevOps — TOP LEFT -->
+        <div class="service-card absolute" style="width: 230px; left: calc(50% - 248px); top: calc(50% - 124px); transform: translate(-50%, -50%); animation-delay: 2.5s;">
+          <div class="service-card-inner group">
+            <div class="service-card-glow" style="background: #374151;"></div>
+            <div class="service-corner"></div>
+            <div class="relative">
+              <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #374151, #6b7280);">▲</div>
+              <h4 class="service-title font-display text-base font-semibold mb-1">Deployment & DevOps</h4>
+              <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Vercel, Git workflows, CI/CD. Expanding into AWS and cloud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile/tablet -->
+      <div class="lg:hidden">
+        <div id="face-mobile" class="face-container mx-auto mb-12"
+             style="width: 160px; height: 160px;
+                    background: radial-gradient(circle at 30% 25%, #facc15 0%, #f59e0b 35%, #b45309 100%);
+                    box-shadow: 0 0 80px rgba(250,204,21,0.2), inset -12px -18px 36px rgba(0,0,0,0.25), inset 6px 6px 18px rgba(255,255,255,0.15);">
+          <div class="flex" style="gap: 16px;">
+            <div class="eye bg-white rounded-full flex items-center justify-center shadow-inner" style="width: 36px; height: 36px;">
+              <div class="pupil bg-zinc-900 rounded-full relative" style="width: 15px; height: 15px; transition: transform 0.08s linear;">
+                <div class="absolute bg-white rounded-full" style="width: 4px; height: 4px; top: 20%; left: 20%;"></div>
+              </div>
+            </div>
+            <div class="eye bg-white rounded-full flex items-center justify-center shadow-inner" style="width: 36px; height: 36px;">
+              <div class="pupil bg-zinc-900 rounded-full relative" style="width: 15px; height: 15px; transition: transform 0.08s linear;">
+                <div class="absolute bg-white rounded-full" style="width: 4px; height: 4px; top: 20%; left: 20%;"></div>
+              </div>
+            </div>
+          </div>
+          <svg width="64" height="32" viewBox="0 0 80 36" class="mt-2 overflow-visible">
+            <path class="mouth-path"
+                  d="M 22 18 Q 40 22 58 18"
+                  stroke="#1a1a1a"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                  fill="none"
+                  style="transition: all 0.4s cubic-bezier(.5,1.6,.4,1);" />
+          </svg>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5 text-left">
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #1e40af;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #1e40af, #3b5bdb);">⚛</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">Frontend Dev</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">React.js interfaces with clean state management and pixel-precise design.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #b45309;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #b45309, #d97706);">✦</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">Responsive Design</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Mobile-first layouts using Tailwind and modern CSS across every device.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #7c2d12;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #7c2d12, #c2410c);">▣</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">CMS Integration</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">WordPress and headless CMS workflows marketing teams actually enjoy.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #065f46;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #065f46, #059669);">↔</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">REST API</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Connecting frontends to Node/Express backends with JWT auth flows.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #581c87;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #581c87, #7c3aed);">◉</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">ML Prototyping</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Python, TensorFlow, scikit-learn from data prep to model evaluation.</p>
+              </div>
+            </div>
+          </div>
+          <div class="service-card">
+            <div class="service-card-inner group">
+              <div class="service-card-glow" style="background: #374151;"></div>
+              <div class="service-corner"></div>
+              <div class="relative">
+                <div class="service-icon w-10 h-10 rounded-xl mb-3 flex items-center justify-center text-lg shadow-lg" style="background: linear-gradient(135deg, #374151, #6b7280);">▲</div>
+                <h4 class="service-title font-display text-base font-semibold mb-1">Deployment & DevOps</h4>
+                <p class="text-xs leading-relaxed" style="color: #a1a1aa;">Vercel, Git workflows, CI/CD. Expanding into AWS and cloud.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS strip -->
+  <section class="py-24 overflow-hidden" style="border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05); background: var(--bg); color: var(--fg);">
+    <div class="marquee marquee-r font-display text-4xl md:text-6xl font-bold whitespace-nowrap">
+      <span class="flex gap-10 pr-10 items-center">
+        <span style="color: var(--accent);">★</span><span>HTML5</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">CSS3 / SCSS</span>
+        <span style="color: var(--accent);">★</span><span>Tailwind</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">React.js</span>
+        <span style="color: var(--accent);">★</span><span>Node.js</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">MongoDB</span>
+        <span style="color: var(--accent);">★</span><span>Python</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">Git/GitHub</span>
+      </span>
+      <span class="flex gap-10 pr-10 items-center">
+        <span style="color: var(--accent);">★</span><span>HTML5</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">CSS3 / SCSS</span>
+        <span style="color: var(--accent);">★</span><span>Tailwind</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">React.js</span>
+        <span style="color: var(--accent);">★</span><span>Node.js</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">MongoDB</span>
+        <span style="color: var(--accent);">★</span><span>Python</span>
+        <span style="color: var(--accent);">★</span><span class="outline-text">Git/GitHub</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="relative py-32 px-6 lg:px-10 overflow-hidden" style="background: var(--bg); color: var(--fg);">
+    <h2 class="pointer-events-none absolute inset-x-0 top-12 text-center font-display font-black select-none" style="font-size: 25vw; color: rgba(255,255,255,0.03); line-height: 1;">CONNECT</h2>
+    <div class="relative mx-auto text-center" style="max-width: 48rem;">
+      <p class="reveal text-sm uppercase tracking-[0.3em] mb-6" style="color: var(--accent);">Get in touch</p>
+      <h3 class="reveal font-display text-5xl md:text-7xl font-bold mb-8">Let's build something.</h3>
+      <p class="reveal text-lg mb-12" style="color: #a1a1aa;">
+        Open to internships and frontend roles. Drop a message or reach me directly.
+      </p>
+
+      <form onsubmit="event.preventDefault(); window.location.href='mailto:hariszahidrana@gmail.com';"
+            class="reveal glass rounded-3xl p-8 text-left space-y-5">
+        <div>
+          <label class="text-xs uppercase tracking-widest" style="color: #71717a;">Name</label>
+          <input type="text" name="name" required class="mt-2 w-full bg-transparent border-b outline-none py-3 transition-colors" style="border-color: rgba(255,255,255,0.15); color: var(--fg);" onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest" style="color: #71717a;">Email</label>
+          <input type="email" name="email" required class="mt-2 w-full bg-transparent border-b outline-none py-3 transition-colors" style="border-color: rgba(255,255,255,0.15); color: var(--fg);" onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'">
+        </div>
+        <div>
+          <label class="text-xs uppercase tracking-widest" style="color: #71717a;">Message</label>
+          <textarea rows="4" required class="mt-2 w-full bg-transparent border-b outline-none py-3 resize-none transition-colors" style="border-color: rgba(255,255,255,0.15); color: var(--fg);" onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'"></textarea>
+        </div>
+        <button type="submit" class="w-full uppercase tracking-widest rounded-xl py-4 font-semibold transition-colors" style="background: #ffffff; color: #000000;">
+          Send Message
+        </button>
+      </form>
+
+      <!-- Contact icons only -->
+      <div class="reveal flex items-center justify-center gap-5 mt-10">
+        <!-- Email -->
+        <a href="mailto:hariszahidrana@gmail.com" class="contact-icon-btn" aria-label="Send email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/muhammad-haris-887490232/" target="_blank" rel="noreferrer" class="contact-icon-btn" aria-label="LinkedIn profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <!-- GitHub -->
+        <a href="https://github.com/hariszahidrana" target="_blank" rel="noreferrer" class="contact-icon-btn" aria-label="GitHub profile">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="px-6 lg:px-10 pt-20 pb-10" style="background: var(--bg); color: var(--fg); border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="mx-auto" style="max-width: 80rem;">
+      <div class="overflow-hidden mb-16">
+        <div class="marquee marquee-l font-display text-6xl md:text-8xl font-bold whitespace-nowrap" style="color: var(--accent);">
+          <span class="flex gap-12 pr-12">
+            <span>Available for work</span><span class="outline-text">— Let's talk</span>
+            <span>Available for work</span><span class="outline-text">— Let's talk</span>
+          </span>
+          <span class="flex gap-12 pr-12">
+            <span>Available for work</span><span class="outline-text">— Let's talk</span>
+            <span>Available for work</span><span class="outline-text">— Let's talk</span>
+          </span>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-10 mb-16">
+        <div>
+          <div class="font-display text-2xl font-bold mb-3">haris<span style="color: var(--accent);">.web</span></div>
+          <p class="text-sm max-w-xs" style="color: #71717a;">Frontend developer based in Lahore, Pakistan. Building cinematic web experiences.</p>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-widest mb-4" style="color: #71717a;">Navigate</div>
+          <ul class="space-y-2" style="color: #d4d4d8;">
+            <li><a href="#home" class="hover:text-[color:var(--accent)]" style="transition: color 0.2s;">Home</a></li>
+            <li><a href="#about" class="hover:text-[color:var(--accent)]" style="transition: color 0.2s;">About</a></li>
+            <li><a href="#projects" class="hover:text-[color:var(--accent)]" style="transition: color 0.2s;">Projects</a></li>
+            <li><a href="#services" class="hover:text-[color:var(--accent)]" style="transition: color 0.2s;">Services</a></li>
+            <li><a href="#contact" class="hover:text-[color:var(--accent)]" style="transition: color 0.2s;">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-xs uppercase tracking-widest mb-4" style="color: #71717a;">Contact</div>
+          <ul class="space-y-2 text-sm" style="color: #d4d4d8;">
+            <li>hariszahidrana@gmail.com</li>
+            <li>+92 321-6614948</li>
+            <li>Lahore, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 text-xs pt-8" style="border-top: 1px solid rgba(255,255,255,0.05); color: #52525b;">
+        <span>© 2026 Muhammad Haris. All rights reserved.</span>
+        <span>Designed &amp; built with care.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
